@@ -10,7 +10,7 @@ export default function Home() {
     <div className="flex min-h-screen flex-col">
       {/* Promo Banner */}
       <div className="relative bg-black text-white p-2 text-center text-sm">
-        <p className="text-emerald-400">Unlock Up to $500 in DeepSeek API Credits - Give $20, Get $20 Instantly!</p>
+        <p className="text-emerald-400">Never Struggle For Copy or Content Again!</p>
         <Button
           variant="ghost"
           size="icon"
@@ -25,7 +25,7 @@ export default function Home() {
       <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container flex h-16 items-center">
           <Link href="/" className="flex items-center space-x-2">
-            <span className="text-xl font-bold">Novita</span>
+            <span className="text-xl font-bold px-4 py-2">Silmari</span>
           </Link>
           <nav className="ml-auto flex gap-6 items-center">
             <Link href="/enterprise-marketing" className="text-sm font-medium hover:underline">
@@ -51,6 +51,24 @@ export default function Home() {
             </Link>
             <Link href="/direct-response-marketers" className="text-sm font-medium hover:underline">
               Direct Response
+            </Link>
+            <Link href="/enterprise-roi" className="text-sm font-medium hover:underline">
+              Enterprise ROI
+            </Link>
+            <Link href="/agency-partner" className="text-sm font-medium hover:underline">
+              Agency Partners
+            </Link>
+            <Link href="/corporate-compliance" className="text-sm font-medium hover:underline">
+              Corporate Compliance
+            </Link>
+            <Link href="/sales-presentation" className="text-sm font-medium hover:underline">
+              Sales Presentation
+            </Link>
+            <Link href="/email-sequence" className="text-sm font-medium hover:underline">
+              Email Sequence
+            </Link>
+            <Link href="/cost-calculator" className="text-sm font-medium hover:underline">
+              Cost Calculator
             </Link>
           </nav>
         </div>
