@@ -10,7 +10,7 @@ export default function Home() {
     <div className="flex min-h-screen flex-col">
       {/* Promo Banner */}
       <div className="relative bg-black text-white p-2 text-center text-sm">
-        <p className="text-emerald-400">Never Struggle With Copy or Content Again!</p>
+        <p className="text-emerald-400">Unlock Up to $500 in DeepSeek API Credits - Give $20, Get $20 Instantly!</p>
         <Button
           variant="ghost"
           size="icon"
@@ -25,7 +25,7 @@ export default function Home() {
       <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container flex h-16 items-center">
           <Link href="/" className="flex items-center space-x-2">
-            <span className="text-xl font-bold">Silmari Ai</span>
+            <span className="text-xl font-bold">Novita</span>
           </Link>
           <nav className="ml-auto flex gap-6 items-center">
             <Link href="/enterprise-marketing" className="text-sm font-medium hover:underline">
@@ -53,22 +53,6 @@ export default function Home() {
               Direct Response
             </Link>
           </nav>
-          {/*<nav className="ml-auto flex gap-6 items-center">
-            <Link href="#" className="text-sm font-medium hover:underline">
-              Model Library
-            </Link>
-            <Link href="#" className="text-sm font-medium hover:underline">
-              GPUs
-            </Link>
-            <Link href="#" className="text-sm font-medium hover:underline">
-              Pricing
-            </Link>
-            <Link href="#" className="text-sm font-medium hover:underline">
-              Docs
-            </Link>
-            <Button variant="ghost">Log In</Button>
-            <Button>Get Started</Button>
-          </nav>*/}
         </div>
       </header>
 
