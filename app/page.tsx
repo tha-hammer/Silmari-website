@@ -283,7 +283,7 @@ export default function Home() {
             <h3 className="text-lg font-bold">Company</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="#" className="text-sm text-muted-foreground hover:underline">
+                <Link href="/about" className="text-sm text-muted-foreground hover:underline">
                   About Us
                 </Link>
               </li>
