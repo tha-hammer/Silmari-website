@@ -9,19 +9,7 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  experimental: {
-    // webpackBuildWorker: true,
-    // parallelServerBuildTraces: true,
-    // parallelServerCompiles: true,
-  },
   output: 'standalone',
-  webpack: (config) => {
-    config.module.rules.push({
-      test: /\.css$/,
-      use: ['style-loader', 'css-loader', 'postcss-loader'],
-    });
-    return config;
-  },
 }
 
 let userConfig = undefined
