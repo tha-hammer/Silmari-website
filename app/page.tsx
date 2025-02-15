@@ -1,161 +1,368 @@
 import Link from "next/link"
+import { ArrowRight, X } from "lucide-react"
+
 import { Button } from "@/components/ui/button"
+import { Card, CardContent } from "@/components/ui/card"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-black text-white">
-      {/* Top Banner */}
-      <div className="w-full bg-[#00F37E] text-black py-2 px-4 text-center">
-        <p className="text-sm font-medium">Transform Your Content Operations with Expert-Supervised AI</p>
+    <div className="flex min-h-screen flex-col">
+      {/* Promo Banner */}
+      <div className="relative bg-black text-white p-2 text-center text-sm">
+        <p className="text-emerald-400">Never Struggle For Copy or Content Again!</p>
+        <Button
+          variant="ghost"
+          size="icon"
+          className="absolute right-2 top-1/2 -translate-y-1/2 text-white hover:text-white/80"
+        >
+          <X className="h-4 w-4" />
+          <span className="sr-only">Close</span>
+        </Button>
       </div>
 
       {/* Navigation */}
-      <header className="sticky top-0 z-50 w-full border-b border-gray-800 bg-black/95 backdrop-blur supports-[backdrop-filter]:bg-black/60">
+      <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container flex h-16 items-center">
           <Link href="/" className="flex items-center space-x-2">
-            <span className="text-xl font-bold text-[#00F37E]">Silmari</span>
+            <span className="text-xl font-bold px-4 py-2">Silmari</span>
           </Link>
           <nav className="ml-auto flex gap-6 items-center">
-            <Link href="/enterprise-marketing" className="text-sm font-medium hover:text-[#00F37E] transition-colors">
+            <Link href="/enterprise-marketing" className="text-sm font-medium hover:underline">
               Enterprise Marketing
             </Link>
-            <Link href="/agency-owners" className="text-sm font-medium hover:text-[#00F37E] transition-colors">
+            <Link href="/agency-owners" className="text-sm font-medium hover:underline">
               Agency Owners
             </Link>
-            <Link
-              href="/corporate-communications"
-              className="text-sm font-medium hover:text-[#00F37E] transition-colors"
-            >
+            <Link href="/corporate-communications" className="text-sm font-medium hover:underline">
               Corporate Communications
             </Link>
-            <Button variant="outline" asChild>
-              <Link href="/contact">Contact</Link>
-            </Button>
-            <Button asChild>
-              <Link href="/get-started">Get Started</Link>
-            </Button>
+            <Link href="/market-mastery-framework" className="text-sm font-medium hover:underline">
+              Market Mastery
+            </Link>
+            <Link href="/enterprise-agency-owners" className="text-sm font-medium hover:underline">
+              Enterprise Agency
+            </Link>
+            <Link href="/high-volume-publishers" className="text-sm font-medium hover:underline">
+              Publishers
+            </Link>
+            <Link href="/ecommerce-brands" className="text-sm font-medium hover:underline">
+              E-commerce
+            </Link>
+            <Link href="/direct-response-marketers" className="text-sm font-medium hover:underline">
+              Direct Response
+            </Link>
+            <Link href="/enterprise-roi" className="text-sm font-medium hover:underline">
+              Enterprise ROI
+            </Link>
+            <Link href="/agency-partner" className="text-sm font-medium hover:underline">
+              Agency Partners
+            </Link>
+            <Link href="/corporate-compliance" className="text-sm font-medium hover:underline">
+              Corporate Compliance
+            </Link>
+            <Link href="/sales-presentation" className="text-sm font-medium hover:underline">
+              Sales Presentation
+            </Link>
+            <Link href="/email-sequence" className="text-sm font-medium hover:underline">
+              Email Sequence
+            </Link>
+            <Link href="/cost-calculator" className="text-sm font-medium hover:underline">
+              Cost Calculator
+            </Link>
           </nav>
         </div>
       </header>
 
-      {/* Hero Section */}
-      <section className="container py-24">
-        <div className="mx-auto max-w-3xl text-center">
-          <h1 className="mb-8 text-6xl font-bold tracking-tight">
-            Transform Enterprise Content with Expert-Supervised AI
-          </h1>
-          <p className="mb-12 text-xl text-gray-400">
-            Stop compromising between scale and quality. Our expert-supervised AI system delivers enterprise-grade
-            content with guaranteed performance.
-          </p>
-          <div className="flex justify-center gap-4">
-            <Button size="lg" asChild>
-              <Link href="/schedule-demo">Schedule Demo</Link>
-            </Button>
-            <Button size="lg" variant="outline" asChild>
-              <Link href="/case-studies">View Case Studies</Link>
-            </Button>
+      <main className="flex-1">
+        {/* Hero Section */}
+        <section className="relative overflow-hidden py-24">
+          <div className="container flex flex-col items-center text-center">
+            <div className="space-y-4 max-w-3xl">
+              <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl">
+                Transform Enterprise Content with Expert-Supervised AI
+              </h1>
+              <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
+                Stop compromising between scale and quality. Our expert-supervised AI system delivers enterprise-grade
+                content with guaranteed performance.
+              </p>
+              <div className="flex flex-col gap-4 min-[400px]:flex-row justify-center">
+                <Button size="lg">
+                  Schedule Demo
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+                <Button size="lg" variant="outline">
+                  View Case Studies
+                </Button>
+              </div>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Stats Section */}
-      <section className="container py-24 border-t border-gray-800">
-        <div className="grid grid-cols-1 gap-12 md:grid-cols-4">
-          <div className="text-center">
-            <h3 className="text-5xl font-bold text-[#00F37E] mb-4">3-5X</h3>
-            <p className="text-gray-400">Better performance than standard AI tools</p>
+        {/* Metrics Section */}
+        <section className="border-t py-12">
+          <div className="container">
+            <div className="grid gap-8 md:grid-cols-4">
+              <Card>
+                <CardContent className="pt-6">
+                  <div className="text-3xl font-bold">3-5X</div>
+                  <p className="text-sm text-muted-foreground">Better performance than standard AI tools</p>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardContent className="pt-6">
+                  <div className="text-3xl font-bold">99.9%</div>
+                  <p className="text-sm text-muted-foreground">Compliance rate across channels</p>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardContent className="pt-6">
+                  <div className="text-3xl font-bold">52%</div>
+                  <p className="text-sm text-muted-foreground">Increase in content production</p>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardContent className="pt-6">
+                  <div className="text-3xl font-bold">100%</div>
+                  <p className="text-sm text-muted-foreground">Quality maintained at scale</p>
+                </CardContent>
+              </Card>
+            </div>
           </div>
-          <div className="text-center">
-            <h3 className="text-5xl font-bold text-[#00F37E] mb-4">99.9%</h3>
-            <p className="text-gray-400">Compliance rate across channels</p>
-          </div>
-          <div className="text-center">
-            <h3 className="text-5xl font-bold text-[#00F37E] mb-4">52%</h3>
-            <p className="text-gray-400">Increase in content production</p>
-          </div>
-          <div className="text-center">
-            <h3 className="text-5xl font-bold text-[#00F37E] mb-4">100%</h3>
-            <p className="text-gray-400">Quality maintained at scale</p>
-          </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Features Section */}
-      <section className="container py-24 border-t border-gray-800">
-        <div className="mx-auto max-w-3xl text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4">Transform Your Content Operations</h2>
-          <p className="text-gray-400">
-            Stop letting unreliable AI tools put your brand at risk. Our expert-supervised system combines AI efficiency
-            with human expertise from industry veterans who have generated over $100M in proven results.
-          </p>
-        </div>
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
-          <div className="p-6 border border-gray-800 rounded-lg">
-            <h3 className="text-xl font-bold mb-2">Scale content production 3X</h3>
-            <p className="text-gray-400">Increase your content output without sacrificing quality</p>
+        {/* Solutions Section */}
+        <section className="border-t py-24">
+          <div className="container">
+            <Tabs defaultValue="enterprise" className="space-y-8">
+              <TabsList className="grid w-full grid-cols-1 md:grid-cols-3">
+                <TabsTrigger value="enterprise">For Enterprise Leaders</TabsTrigger>
+                <TabsTrigger value="agency">For Agency Leaders</TabsTrigger>
+                <TabsTrigger value="communications">For Corporate Communications</TabsTrigger>
+              </TabsList>
+              <TabsContent value="enterprise" className="space-y-4">
+                <h2 className="text-3xl font-bold">Transform Your Content Operations</h2>
+                <p className="text-muted-foreground">
+                  Stop letting unreliable AI tools put your brand at risk. Our expert-supervised system combines AI
+                  efficiency with human expertise from industry veterans who have generated over $100M in proven
+                  results.
+                </p>
+                <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+                  <Card>
+                    <CardContent className="pt-6">
+                      <div className="font-bold">Scale content production 3X</div>
+                    </CardContent>
+                  </Card>
+                  <Card>
+                    <CardContent className="pt-6">
+                      <div className="font-bold">Maintain 99.9% compliance</div>
+                    </CardContent>
+                  </Card>
+                  <Card>
+                    <CardContent className="pt-6">
+                      <div className="font-bold">Reduce costs by 52%</div>
+                    </CardContent>
+                  </Card>
+                  <Card>
+                    <CardContent className="pt-6">
+                      <div className="font-bold">Guarantee quality at scale</div>
+                    </CardContent>
+                  </Card>
+                </div>
+              </TabsContent>
+              <TabsContent value="agency" className="space-y-4">
+                <h2 className="text-3xl font-bold">Win and Retain Larger Clients</h2>
+                <p className="text-muted-foreground">
+                  Compete with agencies 10X your size using our enterprise-grade AI system. Deliver premium quality at
+                  scale while maintaining higher margins.
+                </p>
+                <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+                  <Card>
+                    <CardContent className="pt-6">
+                      <div className="font-bold">67% faster production</div>
+                    </CardContent>
+                  </Card>
+                  <Card>
+                    <CardContent className="pt-6">
+                      <div className="font-bold">3X client retention</div>
+                    </CardContent>
+                  </Card>
+                  <Card>
+                    <CardContent className="pt-6">
+                      <div className="font-bold">41% higher margins</div>
+                    </CardContent>
+                  </Card>
+                  <Card>
+                    <CardContent className="pt-6">
+                      <div className="font-bold">Enterprise-grade quality</div>
+                    </CardContent>
+                  </Card>
+                </div>
+              </TabsContent>
+              <TabsContent value="communications" className="space-y-4">
+                <h2 className="text-3xl font-bold">Perfect Global Compliance</h2>
+                <p className="text-muted-foreground">
+                  Finally, an AI solution that understands enterprise compliance. Ensure consistent brand voice and
+                  messaging across global teams with built-in risk mitigation.
+                </p>
+                <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+                  <Card>
+                    <CardContent className="pt-6">
+                      <div className="font-bold">89% consistency score</div>
+                    </CardContent>
+                  </Card>
+                  <Card>
+                    <CardContent className="pt-6">
+                      <div className="font-bold">Zero compliance incidents</div>
+                    </CardContent>
+                  </Card>
+                  <Card>
+                    <CardContent className="pt-6">
+                      <div className="font-bold">99.9% brand accuracy</div>
+                    </CardContent>
+                  </Card>
+                  <Card>
+                    <CardContent className="pt-6">
+                      <div className="font-bold">2x team productivity</div>
+                    </CardContent>
+                  </Card>
+                </div>
+              </TabsContent>
+            </Tabs>
           </div>
-          <div className="p-6 border border-gray-800 rounded-lg">
-            <h3 className="text-xl font-bold mb-2">Maintain 99.9% compliance</h3>
-            <p className="text-gray-400">Ensure brand safety and regulatory compliance</p>
-          </div>
-          <div className="p-6 border border-gray-800 rounded-lg">
-            <h3 className="text-xl font-bold mb-2">Reduce costs by 52%</h3>
-            <p className="text-gray-400">Lower your content production costs significantly</p>
-          </div>
-          <div className="p-6 border border-gray-800 rounded-lg">
-            <h3 className="text-xl font-bold mb-2">Guarantee quality at scale</h3>
-            <p className="text-gray-400">Maintain consistent quality across all content</p>
-          </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Service Tiers */}
-      <section className="container py-24 border-t border-gray-800">
-        <h2 className="text-4xl font-bold text-center mb-16">Two Powerful Service Tiers</h2>
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
-          <div className="p-8 border border-gray-800 rounded-lg">
-            <h3 className="text-2xl font-bold mb-4">Enterprise</h3>
-            <ul className="space-y-4 mb-8">
-              <li className="flex items-center gap-2">
-                <span className="text-[#00F37E]">✓</span>
-                Custom AI model training
+        {/* Pricing Section */}
+        <section className="border-t py-24">
+          <div className="container space-y-12 text-center">
+            <div className="space-y-4">
+              <h2 className="text-3xl font-bold">Two Powerful Service Tiers</h2>
+              <p className="mx-auto max-w-[700px] text-muted-foreground">
+                Choose the perfect plan for your enterprise needs with our flexible pricing options.
+              </p>
+            </div>
+            <div className="grid gap-8 md:grid-cols-2">
+              <Card>
+                <CardContent className="p-6">
+                  <div className="space-y-4">
+                    <h3 className="text-2xl font-bold">AI Excellence</h3>
+                    <div className="text-4xl font-bold">$5K/Month</div>
+                    <ul className="space-y-2 text-left">
+                      <li>✓ Access to AI system with proven frameworks</li>
+                      <li>✓ Group support and optimization</li>
+                      <li>✓ Regular framework updates</li>
+                      <li>✓ Performance benchmarking</li>
+                    </ul>
+                    <Button className="w-full">Get Started</Button>
+                  </div>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardContent className="p-6">
+                  <div className="space-y-4">
+                    <h3 className="text-2xl font-bold">AI Mastery</h3>
+                    <div className="text-4xl font-bold">$15K/Month</div>
+                    <ul className="space-y-2 text-left">
+                      <li>✓ Everything in AI Excellence</li>
+                      <li>✓ 1-on-1 strategic guidance</li>
+                      <li>✓ Custom framework adaptation</li>
+                      <li>✓ Direct access to expertise</li>
+                      <li>✓ Advanced optimization</li>
+                    </ul>
+                    <Button className="w-full">Contact Sales</Button>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      {/* Footer */}
+      <footer className="border-t py-12">
+        <div className="container grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+          <div className="space-y-4">
+            <h3 className="text-lg font-bold">Company</h3>
+            <ul className="space-y-2">
+              <li>
+                <Link href="/about" className="text-sm text-muted-foreground hover:underline">
+                  About Us
+                </Link>
               </li>
-              <li className="flex items-center gap-2">
-                <span className="text-[#00F37E]">✓</span>
-                Dedicated expert oversight
+              <li>
+                <Link href="#" className="text-sm text-muted-foreground hover:underline">
+                  Careers
+                </Link>
               </li>
-              <li className="flex items-center gap-2">
-                <span className="text-[#00F37E]">✓</span>
-                24/7 priority support
+              <li>
+                <Link href="#" className="text-sm text-muted-foreground hover:underline">
+                  Contact
+                </Link>
               </li>
             </ul>
-            <Button size="lg" className="w-full" asChild>
-              <Link href="/enterprise">Learn More</Link>
-            </Button>
           </div>
-          <div className="p-8 border border-gray-800 rounded-lg">
-            <h3 className="text-2xl font-bold mb-4">Agency</h3>
-            <ul className="space-y-4 mb-8">
-              <li className="flex items-center gap-2">
-                <span className="text-[#00F37E]">✓</span>
-                White-label solutions
+          <div className="space-y-4">
+            <h3 className="text-lg font-bold">Resources</h3>
+            <ul className="space-y-2">
+              <li>
+                <Link href="#" className="text-sm text-muted-foreground hover:underline">
+                  Blog
+                </Link>
               </li>
-              <li className="flex items-center gap-2">
-                <span className="text-[#00F37E]">✓</span>
-                Expert review system
+              <li>
+                <Link href="#" className="text-sm text-muted-foreground hover:underline">
+                  Case Studies
+                </Link>
               </li>
-              <li className="flex items-center gap-2">
-                <span className="text-[#00F37E]">✓</span>
-                Client management tools
+              <li>
+                <Link href="#" className="text-sm text-muted-foreground hover:underline">
+                  Documentation
+                </Link>
               </li>
             </ul>
-            <Button size="lg" className="w-full" asChild>
-              <Link href="/agency">Learn More</Link>
-            </Button>
+          </div>
+          <div className="space-y-4">
+            <h3 className="text-lg font-bold">Legal</h3>
+            <ul className="space-y-2">
+              <li>
+                <Link href="#" className="text-sm text-muted-foreground hover:underline">
+                  Privacy Policy
+                </Link>
+              </li>
+              <li>
+                <Link href="#" className="text-sm text-muted-foreground hover:underline">
+                  Terms of Service
+                </Link>
+              </li>
+              <li>
+                <Link href="#" className="text-sm text-muted-foreground hover:underline">
+                  Security
+                </Link>
+              </li>
+            </ul>
+          </div>
+          <div className="space-y-4">
+            <h3 className="text-lg font-bold">Connect</h3>
+            <ul className="space-y-2">
+              <li>
+                <Link href="#" className="text-sm text-muted-foreground hover:underline">
+                  Twitter
+                </Link>
+              </li>
+              <li>
+                <Link href="#" className="text-sm text-muted-foreground hover:underline">
+                  LinkedIn
+                </Link>
+              </li>
+              <li>
+                <Link href="#" className="text-sm text-muted-foreground hover:underline">
+                  GitHub
+                </Link>
+              </li>
+            </ul>
           </div>
         </div>
-      </section>
+      </footer>
     </div>
   )
 }
